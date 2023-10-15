@@ -14,6 +14,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
     />
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div class="container">
@@ -47,24 +48,61 @@
       </header>
     </div>
     <div class="container">
-      <h1>Search:</h1>
-      <input
-        type="text"
-        class="form-control mb-3"
-        id="search-box"
-        placeholder="search here..."
-        onkeyup="searchBlogs()"
-      />
-      <div class="row" id="blog-list">
-        <div id="blog-data"></div>
-
-        <!-- <div class="col" id="data">
-          <h3 class="mb-0">Javascript</h3>
-        </div>
-        <div class="col" id="data">
-          <h3 class="mb-0">Typescript</h3>
-        </div> -->
+      <div class="search-wrapper">
+        <label for="search" class="fs-2">Search:</label>
+        <input
+          type="search"
+          id="search"
+          class="form-control mb-3"
+          placeholder="search here..."
+          data-search
+        />
       </div>
+      <div data-user-cards-container></div>
+      <template data-user-template>
+        <div class="col">
+          <div
+            class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative"
+          >
+            <div class="col p-4 d-flex flex-column position-static">
+              <div class="d-flex justify-content-between">
+                <strong
+                  id="category"
+                  class="d-inline-block mb-2 text-primary-emphasis"
+                ></strong>
+                <div class="d-flex gap-1">
+                  <p id="views"></p>
+                  <span>views</span>
+                </div>
+              </div>
+              <h3 class="mb-0" id="title"></h3>
+              <div class="mb-1 text-body-secondary" id="author"></div>
+              <p class="card-text mb-auto" id="content"></p>
+              <a
+                href="blog.html"
+                class="icon-link gap-1 icon-link-hover stretched-link"
+              >
+                Continue reading
+                <svg class="bi"><use xlink:href="#chevron-right"></use></svg>
+              </a>
+            </div>
+            <div class="col-auto d-none d-lg-block">
+              <svg
+                class="bd-placeholder-img"
+                width="200"
+                height="250"
+                xmlns="http://www.w3.org/2000/svg"
+                role="img"
+                aria-label="Placeholder: Thumbnail"
+                preserveAspectRatio="xMidYMid slice"
+                focusable="false"
+              >
+                <rect width="100%" height="100%" fill="#55595c"></rect>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </template>
     </div>
     <script src="script.js"></script>
   </body>

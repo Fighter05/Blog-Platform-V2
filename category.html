@@ -14,6 +14,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
     />
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div class="container">
@@ -46,15 +47,40 @@
         </div>
       </header>
     </div>
-    <div class="container">
+    <!-- <div class="container">
       <h1 class="text-center">Category</h1>
       <div class="d-flex justify-content-center mb-3 gap-3">
-        <button class="btn btn-primary">All</button>
-        <button class="btn btn-primary">Programming</button>
-        <button class="btn btn-primary">Health</button>
+        <button class="btn btn-primary" onclick="filterObjects('all')">
+          All
+        </button>
+        <button class="btn btn-primary" onclick="filterObjects('Programming')">
+          Programming
+        </button>
+        <button class="btn btn-primary" onclick="filterObjects('Health')">
+          Health
+        </button>
       </div>
       <div class="row">
-        <div id="blog-data"></div>
+        <div id="data"></div>
+      </div>
+    </div> -->
+    <div class="container">
+      <!-- Images Filter Buttons Section -->
+      <h1 class="text-center">Category</h1>
+      <div class="row mt-5" id="filter-buttons">
+        <div class="col-12">
+          <button class="btn mb-2 me-1 active" data-filter="all">
+            Show all
+          </button>
+          <button class="btn mb-2 mx-1" data-filter="Programming">
+            Programming
+          </button>
+          <button class="btn mb-2 mx-1" data-filter="Health">Health</button>
+        </div>
+      </div>
+      <!-- Filterable Images / Cards Section -->
+      <div class="row px-2 mt-4 gap-3" id="filterable-cards">
+        <div id="data"></div>
       </div>
     </div>
     <script src="script.js"></script>
